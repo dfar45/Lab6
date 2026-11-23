@@ -16,4 +16,8 @@ public class SavingsAccount extends BankAccount {
 	public void postInterest() {
 		setBalance(getBalance() + (getBalance() * rate) / 12);
 	}
+	public String getAccountNumber() {
+		return accountNumber;
+	}
 }
+
