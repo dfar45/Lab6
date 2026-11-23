@@ -7,11 +7,13 @@ public class SavingsAccount extends BankAccount {
 	public String accountNumber;
 	public SavingsAccount(String name, double amount) {
 		super(name, amount);
-		accountNumber = getAccountNumber();
+		accountNumber = super.getAccountNumber()+"-"+savingsNumber;
 		
 	}
 	public SavingsAccount(SavingsAccount oldAccount, double amount) {
 		super(oldAccount, amount);
+		savingsNumber++;
+		accountNumber = super.getAccountNumber()+"-"+savingsNumber;
 	}
 	public void postInterest() {
 		setBalance(getBalance() + (getBalance() * rate) / 12);
@@ -20,4 +22,5 @@ public class SavingsAccount extends BankAccount {
 		return accountNumber;
 	}
 }
+
 
